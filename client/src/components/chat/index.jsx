@@ -7,11 +7,11 @@ import StandardMessageForm from "@/components/customHeader/customMessageForms/St
 import Ai from "@/components/customHeader/customMessageForms/Ai";
 import AiCode from "@/components/customHeader/customMessageForms/AiCode";
 import AiAssist from "@/components/customHeader/customMessageForms/AiAssist";
-const Chat = () => {
+const Chat = ({user,secret}) => {
   const chatProps=useMultiChatLogic(
     import.meta.env.VITE_PROJECT_ID,
-    "testuser",
-    "1234"
+    user,
+    secret
   )
   return  <div style={{flexBasis:"100%"}}>
     <MultiChatSocket {...chatProps}/>
